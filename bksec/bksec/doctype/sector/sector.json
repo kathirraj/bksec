@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:sector_name",
+ "creation": "2020-12-01 19:53:42.962506",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sector_name",
+  "section_break_2",
+  "sector_head",
+  "column_break_4",
+  "sector_head_name",
+  "disabled"
+ ],
+ "fields": [
+  {
+   "fieldname": "sector_name",
+   "fieldtype": "Data",
+   "label": "Sector Name",
+   "unique": 1
+  },
+  {
+   "fetch_from": "Employee.employee_name",
+   "fieldname": "sector_head",
+   "fieldtype": "Link",
+   "label": "Sector Head",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "sector_head.employee_name",
+   "fieldname": "sector_head_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Sector Head Name",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  }
+ ],
+ "links": [
+  {
+   "link_doctype": "Corporate",
+   "link_fieldname": "sector",
+   "table_fieldname": "name"
+  }
+ ],
+ "modified": "2023-03-27 15:42:46.395749",
+ "modified_by": "Administrator",
+ "module": "bksec",
+ "name": "Sector",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
